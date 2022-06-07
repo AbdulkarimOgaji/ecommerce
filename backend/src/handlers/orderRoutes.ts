@@ -8,7 +8,7 @@ const index = async(_req:Request , res:Response) => {
         const orders = await store.index()
         res.json({
             data:orders,
-            message: 'show all orders'})
+            message: 'Cannot show all orders'})
     }catch(err){
         res.status(400)
         res.json(err)
