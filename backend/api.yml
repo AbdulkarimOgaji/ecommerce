@@ -1,0 +1,48 @@
+openapi: "3.0"
+info:
+  title: Online Store API
+  contact:
+    email: m.ahmed141@hotmail.com
+    name: Mohamed Ahmed
+  description: It exposes a RESTful API that will be used by the frontend developer
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:5000
+
+components:
+  schemas:
+    User:
+      type: object
+      required:
+        - order_status
+        - purchase_date 
+        - delivery_date
+        - id
+      properties:
+        order_id:
+          type: string
+          format: BIGSERIAL PRIMARY KEY
+
+        order_status:
+          type: string
+          maxLength: 64
+
+        purchase_date :
+          type: date
+          maxLength: 64
+
+        delivery_date:
+          type: date
+          maxLength: 64
+
+        id:
+          type: string
+          maxLength: 64
+          description: user_id
+
+      example:
+        order_status: pending
+        purchase_date: 2022-06-07
+        delivery_date: 2022-06-07
+        id: 95f1-454sd-54ewe
